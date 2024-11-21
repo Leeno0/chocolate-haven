@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Haven - Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8e1;
+            margin: 0;
+            color: #4b3621;
+        }
+        header {
+            background: linear-gradient(to right, #8b4513, #6b3a10);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #e9c9a2;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: #4b3621;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        nav a:hover {
+            color: #8b4513;
+            text-decoration: underline;
+        }
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .product img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .product h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .product p {
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #8b4513;
+            margin: 10px 0;
+        }
+        .buy-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background-color: #8b4513;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .buy-button:hover {
+            background-color: #6b3a10;
+        }
+        footer {
+            background-color: #8b4513;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Chocolate Haven - Products
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="register.html">Register</a>
+    </nav>
+    <div class="products-container">
+        <!-- Dark Chocolate -->
+        <div id="darkChocolate" class="product">
+            <img src="images/dark chocolate.jpg" alt="Dark Chocolate">
+            <h2>Dark Chocolate</h2>
+            <p>Rich, intense dark chocolate for true chocolate lovers.</p>
+            <p class="price">$18.00</p>
+            <button class="buy-button" onclick="addToCart('Dark Chocolate', 18)">Buy Now</button>
+        </div>
+        <!-- Milk Chocolate -->
+        <div id="milkChocolate" class="product">
+            <img src="images/milk chocolate.jpg" alt="Milk Chocolate">
+            <h2>Milk Chocolate</h2>
+            <p>Creamy and sweet milk chocolate to brighten your day.</p>
+            <p class="price">$15.00</p>
+            <button class="buy-button" onclick="addToCart('Milk Chocolate', 15)">Buy Now</button>
+        </div>
+        <!-- White Chocolate -->
+        <div id="whiteChocolate" class="product">
+            <img src="images/white chocolate .jpg" alt="White Chocolate">
+            <h2>White Chocolate</h2>
+            <p>Delicate and smooth white chocolate for a sweet treat.</p>
+            <p class="price">$12.00</p>
+            <button class="buy-button" onclick="addToCart('White Chocolate', 12)">Buy Now</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Chocolate Haven. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Store the selected product and price in local storage
+        function addToCart(productName, price) {
+            localStorage.setItem('selectedProduct', productName);
+            localStorage.setItem('productPrice', price);
+            window.location.href = 'checkout.html'; // Redirect to checkout page
+        }
+    </script>
+</body>
+</html>

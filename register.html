@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Haven - Register</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff8e1;
+            margin: 0;
+            padding: 0;
+            color: #4b3621;
+        }
+        header {
+            background: linear-gradient(to right, #8b4513, #6b3a10);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #e9c9a2;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: #4b3621;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #8b4513;
+        }
+        .registration-form {
+            padding: 30px;
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .registration-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #8b4513;
+        }
+        .registration-form input {
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .registration-form input:focus {
+            border-color: #8b4513;
+            outline: none;
+        }
+        .registration-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .registration-form button:hover {
+            background-color: #6b3a10;
+        }
+        .success-message {
+            color: green;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            display: none;
+        }
+        footer {
+            background-color: #8b4513;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Chocolate Haven - Register
+    </header>
+    <nav>
+        <!-- Ensure that the file path to home.html is correct -->
+        <a href="home.html">Home</a> <!-- Adjust file path here -->
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="register.html">Register</a>
+    </nav>
+
+    <section class="registration-form">
+        <h2>Create Your Account</h2>
+        <form id="registrationForm">
+            <input type="text" name="username" id="username" placeholder="Username" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <input type="text" name="address" id="address" placeholder="Address">
+            <button type="submit">Register</button>
+        </form>
+        <p class="success-message" id="successMessage">Registration Successful!</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Chocolate Haven. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from reloading the page
+            
+            // Capture form data
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const address = document.getElementById('address').value;
+
+            // Display a success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.textContent = `Welcome, ${username}! Registration is successful.`;
+            successMessage.style.display = 'block';
+
+            // Log data (simulating backend submission)
+            console.log("Form Data Submitted:");
+            console.log({ username, email, password, address });
+
+            // Clear form fields
+            this.reset();
+        });
+    </script>
+</body>
+</html>
